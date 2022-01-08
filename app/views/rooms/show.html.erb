@@ -1,2 +1,12 @@
 <h1>チャットルーム</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+
+<!-- form_withだと余計なものが生成されるので<form>タグで実装 -->
+<form>
+<input type="text" data-behavior="room_speak">
+</form>
+
+<div id="messages_index">
+<% @messages.each do |message| %>
+  <%= render 'messages/message', message: message %>
+<% end %>
+  </div>
